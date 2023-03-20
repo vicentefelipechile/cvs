@@ -5,7 +5,7 @@ IncludeScript("vs_library")
 ::cvs_commands = {}
 
 
-::cvs_findPlayerByName <- function (name) {
+::cvs.findPlayerByName <- function (name) {
 	local target = null
 	local name = name.tolower()
 
@@ -19,7 +19,7 @@ IncludeScript("vs_library")
 	return null
 }
 
-::cvs_sendCommand <- function(msg) {
+::cvs.sendCommand <- function(msg) {
     local prefix = msg.slice(0, 1)
     local userid = msg.userid
     if ( prefix != ::cvs_prefix ) { return }
@@ -39,5 +39,5 @@ IncludeScript("vs_library")
 
 
 function OnGameEvent_player_chat(msg) {
-    ::cvs_sendCommand(msg)
+    ::cvs.sendCommand(msg)
 }
